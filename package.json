@@ -1,0 +1,15 @@
+{
+	"name": "TS-test",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/ansachuk/TS-test.git",
+	"author": "ansachuk <ansachuk@icloud.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "node index.ts"
+	},
+	"devDependencies": {
+		"@babel/preset-typescript": "^7.22.5",
+		"typescript": "^5.1.6"
+	}
+}
