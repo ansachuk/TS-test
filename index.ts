@@ -1,41 +1,64 @@
-// ? Basic types
+//* enums
 
-const numb: number = 1;
-const str: string = "Hello world!";
-const trueValue: boolean = true;
-
-let list: Array<number>;
-
-list = [1, 2, 3];
-
-// ? Advanced types
-
-//* enum
-enum Numbers {
-	zero,
-	one,
-	two,
-	three,
+const enum links {
+	yt = "youtube.com",
+	in = "instagram.com",
+	tg = "telegram.co",
+	li = "linkedin.com",
 }
 
-console.log(Numbers);
+console.log("links", links["yt"]);
+console.log(links.li);
 
-//* never
-const err = (msg: string): never => {
-	throw new Error(msg);
+//* funcs
+
+function createPassword(name: string, age: number | string = 20, special: string = ""): string {
+	return `${name}${age}${special}`;
+}
+
+console.log("createPassword", createPassword("Jack", "41"));
+
+//* funcs rest args
+
+function createSkills(name: string, ...skills: Array<string>): string {
+	return `Hello, my name is ${name},and my skills are ${skills.join()}`;
+}
+
+console.log("createSkills", createSkills("Tom", "Js", "React", "Vite"));
+
+//* objects
+
+let user: Gunslinger = {
+	name: "Morgan",
+	age: 41,
+	pistol: "Glock",
 };
 
-//! err(str);
+user.age = 44;
 
-//* object
+console.log("createPassword Arth", createPassword(user.name, user.age));
 
-const create = (o: object | null): void => {};
-
-create(null);
+let admin: Gunslinger = {
+	name: "John",
+	age: 37,
+};
 
 //* type
 
-type Name = string;
+type Human = { name: string; age: number };
 
-const username: Name = "ansachuk";
-console.log(username);
+//* interface
+
+const guest: Human = {
+	name: "Teresa",
+	age: 18,
+};
+
+guest.name = "Tina";
+
+interface Gunslinger extends Human {
+	readonly name: string;
+	pistol?: string;
+}
+
+//* Generic
