@@ -62,3 +62,4 @@ interface Gunslinger extends Human {
 }
 
 //* Generic
+const arrGen: Array<string> = ["a","b","c"]
